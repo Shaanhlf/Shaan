@@ -97,7 +97,7 @@ for name, c, a, b in PIECES:
     p = P[name]
     vids.append(f'<video id="v{name}" class="clip vid" src="assets/clip{c}.mp4" data-start="{p["s"]}" data-duration="{p["d"]}" '
                 f'data-media-start="{a}" data-volume="1.15" data-fade-in="0.03" data-fade-out="0.03" data-has-audio="true" data-track-index="0" playsinline></video>')
-vids.append(f'<video id="vMacro" class="clip vid" src="assets/icing_macro.mp4" data-start="{P["D"]["s"]}" data-duration="{MAC_D}" data-media-start="0" muted data-track-index="1" style="z-index:2" playsinline></video>')
+vids.append(f'<div id="real" class="clip" data-start="{P["D"]["s"]}" data-duration="{MAC_D}" data-track-index="1"><img id="realbg" src="assets/real_slice.jpg"/><div id="realtint"></div><div id="realcard"><img id="realimg" src="assets/real_slice.jpg"/></div></div>')
 auds = [f'<audio id="bgm" src="assets/sfx/bgm_ducked.wav" data-start="0" data-duration="{TOTAL}" data-volume="1" data-track-index="5"></audio>']
 for i, (f, at, v) in enumerate(cues):
     dur = float(subprocess.check_output(f"ffprobe -v error -show_entries format=duration -of csv=p=0 {SFX}/{f}.wav", shell=True))
@@ -200,7 +200,9 @@ b0 = P["D"]["s"] + 0.35
 J(f'tl.fromTo("#badge",{{opacity:0,scale:0.3,rotation:-40}},{{opacity:1,scale:1,rotation:0,duration:0.6,ease:"back.out(2)"}},{b0});')
 J(f'tl.fromTo("#badgering",{{rotation:0}},{{rotation:120,duration:{round(P["D"]["d"] + P["D2"]["d"], 3)},ease:"none"}},{b0});')
 J(f'tl.to("#badge",{{opacity:0,scale:0.7,duration:0.3,ease:"power2.in"}},{round(P["E1"]["s"] - 0.3, 3)});')
-J(f'tl.fromTo("#vMacro",{{scale:1.5,x:40,transformOrigin:"50% 100%"}},{{scale:1.62,x:-40,duration:{MAC_D},ease:"none"}},{P["D"]["s"]});')
+J(f'tl.fromTo("#realbg",{{scale:1.9}},{{scale:2.05,duration:{MAC_D},ease:"none"}},{P["D"]["s"]});')
+J(f'tl.fromTo("#realcard",{{y:90,scale:0.86,rotation:4}},{{y:0,scale:1,rotation:-2,duration:0.6,ease:"back.out(1.6)"}},{P["D"]["s"]});')
+J(f'tl.fromTo("#realimg",{{scale:1.0}},{{scale:1.12,duration:{MAC_D},ease:"none"}},{P["D"]["s"]});')
 J(f'tl.fromTo("#firm",{{opacity:0,scale:0.5,rotation:-12}},{{opacity:1,scale:1,rotation:-4,duration:0.45,ease:"back.out(2.5)"}},{round(P["D"]["s"] + 0.9, 3)});')
 J(f'tl.to("#firm",{{opacity:0,duration:0.25}},{round(P["E1"]["s"] - 0.3, 3)});')
 # hearts on "happiness"
@@ -290,9 +292,15 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 .tag .body {{ position:relative; padding:18px 34px 18px 50px; background:var(--cream); border-radius:12px 22px 22px 12px; border:3px solid var(--gold);
   font-family:"Fraunces"; font-style:italic; font-weight:700; font-size:50px; color:var(--burg); box-shadow:0 14px 30px rgba(20,6,3,0.4); }}
 .tag .body:before {{ content:""; position:absolute; left:18px; top:50%; margin-top:-9px; width:18px; height:18px; border-radius:50%; background:var(--burg); }}
-#firm {{ position:absolute; left:110px; top:640px; padding:0 30px; height:76px; z-index:22; opacity:0; display:flex; align-items:center; justify-content:center;
+#firm {{ position:absolute; left:120px; top:1000px; padding:0 30px; height:76px; z-index:22; opacity:0; display:flex; align-items:center; justify-content:center;
   border-radius:40px; background:#FFF6E9; border:3px solid #E7B655; box-shadow:0 12px 30px rgba(20,6,3,0.35);
   font-family:"Fraunces"; font-style:italic; font-weight:700; font-size:38px; color:#6B1A2A; }}
+#real {{ position:absolute; inset:0; z-index:2; overflow:hidden; background:#2B140E; }}
+#realbg {{ position:absolute; left:0; top:330px; width:1080px; filter:blur(26px) saturate(1.1); transform-origin:50% 30%; }}
+#realtint {{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(74,15,28,0.55), rgba(43,20,14,0.35) 50%, rgba(74,15,28,0.6)); }}
+#realcard {{ position:absolute; left:130px; top:250px; width:820px; height:880px; overflow:hidden; border-radius:28px;
+  border:10px solid #FFF6E9; box-shadow:0 30px 70px rgba(10,3,2,0.6), 0 0 0 3px rgba(231,182,85,0.9); }}
+#realimg {{ position:absolute; left:50%; top:0; height:100%; width:auto; transform:translateX(-50%); transform-origin:40% 40%; }}
 #endbg {{ position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; opacity:0; z-index:15; }}
 #card {{ position:absolute; left:110px; width:860px; top:950px; z-index:30; opacity:0; padding:40px 40px 46px; border-radius:40px; text-align:center;
   background:linear-gradient(160deg, rgba(107,26,42,0.94), rgba(58,10,22,0.96)); border:3px solid rgba(231,182,85,0.9);
@@ -327,7 +335,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 <div id="caps">{''.join(cap_html)}</div>
 <div id="card"><div id="shine"></div><div class="brand">SV Sweethut</div><div class="sub">Premium homemade bakery</div>
 <div id="cta"><i>✦</i> DM to order · @svsweethut</div></div>
-<div id="firm">✦ firm hard-butter piping</div>
+<div id="firm">✦ hard butter icing · Palkova</div>
 <div id="rib"></div>
 <div id="flash"></div>
 {chr(10).join(auds)}
