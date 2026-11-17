@@ -14,7 +14,8 @@ PIECES = [
     ("B", 1, 1.86, 7.93),   # "Your perfect tea-time treat ... lots of love"
     ("C1", 2, 0.00, 3.10),  # "Every cake begins with our rich buttery batter"
     ("C2", 2, 3.62, 7.80),  # "slowly baked until golden, soft and absolutely delicious"
-    ("D", 4, 4.80, 7.93),   # "topped with our signature rich creamy palkova icing"
+    ("D", 4, 4.80, 6.36),   # "topped with our signature rich"
+    ("D2", 4, 6.88, 7.93),  # "Palkova icing"  (word "creamy" removed: it is hard butter icing)
     ("E1", 3, 0.00, 1.45),  # "One delicious slice"
     ("E2", 3, 1.64, 3.92),  # "one warm cup of tea, pure happiness"
     ("E3", 3, 4.18, 7.80),  # "And for special moments, we create beautiful custom cakes too"
@@ -61,7 +62,7 @@ for name in ["B", "C1", "D", "E1", "E3", "F1", "F2"]:
 cue("riser", out("C2", 4.0) - 0.8, 0.22)
 cue("ding", out("C2", 4.85), 0.3)                       # "golden"
 cue("pop", out("B", 7.25), 0.32)                         # hearts on "love"
-cue("sparkle", out("D", 6.3), 0.3)                       # "creamy"
+cue("sparkle", P["D2"]["s"], 0.3)                       # "Palkova"
 cue("pop", out("E2", 3.3), 0.3)                         # "happiness"
 cue("sparkle", out("E3", 6.6), 0.3)                      # "custom cakes"
 cue("pop", out("F1", 1.15), 0.3); cue("pop", out("F1", 2.25), 0.3)   # tags
@@ -194,8 +195,10 @@ J(f'tl.to("#gauge",{{opacity:0,scale:0.8,duration:0.3,ease:"power2.in"}},{out("C
 # signature badge (D)
 b0 = P["D"]["s"] + 0.35
 J(f'tl.fromTo("#badge",{{opacity:0,scale:0.3,rotation:-40}},{{opacity:1,scale:1,rotation:0,duration:0.6,ease:"back.out(2)"}},{b0});')
-J(f'tl.fromTo("#badgering",{{rotation:0}},{{rotation:120,duration:{round(P["D"]["d"], 3)},ease:"none"}},{b0});')
+J(f'tl.fromTo("#badgering",{{rotation:0}},{{rotation:120,duration:{round(P["D"]["d"] + P["D2"]["d"], 3)},ease:"none"}},{b0});')
 J(f'tl.to("#badge",{{opacity:0,scale:0.7,duration:0.3,ease:"power2.in"}},{round(P["E1"]["s"] - 0.3, 3)});')
+J(f'tl.fromTo("#fixline",{{opacity:0}},{{opacity:1,duration:0.15}},{out("D", 5.12)});')
+J(f'tl.set("#fixline",{{opacity:0}},{P["D2"]["s"]});')
 # hearts on "happiness"
 h1 = out("E2", 3.3)
 for i in range(3):
@@ -283,6 +286,9 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 .tag .body {{ position:relative; padding:18px 34px 18px 50px; background:var(--cream); border-radius:12px 22px 22px 12px; border:3px solid var(--gold);
   font-family:"Fraunces"; font-style:italic; font-weight:700; font-size:50px; color:var(--burg); box-shadow:0 14px 30px rgba(20,6,3,0.4); }}
 .tag .body:before {{ content:""; position:absolute; left:18px; top:50%; margin-top:-9px; width:18px; height:18px; border-radius:50%; background:var(--burg); }}
+#fixline {{ position:absolute; left:80px; width:740px; top:1596px; height:96px; z-index:14; opacity:0; display:flex; align-items:center; justify-content:center;
+  border-radius:48px; background:#F8F1E2; box-shadow:0 0 30px 18px #F8F1E2; font-weight:700; font-size:34px; color:#6B1A2A; letter-spacing:0.02em; }}
+#fixline i {{ font-style:normal; color:#C98F2E; font-size:24px; margin:0 10px; }}
 #endbg {{ position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; opacity:0; z-index:15; }}
 #card {{ position:absolute; left:110px; width:860px; top:950px; z-index:30; opacity:0; padding:40px 40px 46px; border-radius:40px; text-align:center;
   background:linear-gradient(160deg, rgba(107,26,42,0.94), rgba(58,10,22,0.96)); border:3px solid rgba(231,182,85,0.9);
@@ -309,14 +315,15 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 <div id="gauge">{''.join(f'<i class="tk" style="transform:rotate({a}deg)"></i>' for a in range(-120, 121, 30))}<div id="needle"></div><div class="hub"></div><div class="deg">180°C</div><div class="lbl">golden bake</div></div>
 <div id="badge"><svg id="badgering" viewBox="0 0 270 270"><defs><path id="cp" d="M135 135 m-112 0 a112 112 0 1 1 224 0 a112 112 0 1 1 -224 0"/></defs>
 <circle cx="135" cy="135" r="132" fill="#FFF6E9" stroke="#E7B655" stroke-width="4"/>
-<text font-family="Manrope" font-weight="800" font-size="22" letter-spacing="5" fill="#6B1A2A"><textPath href="#cp">SIGNATURE ✦ PALKOVA ICING ✦ HOMEMADE ✦ </textPath></text></svg>
-<div class="core"><em>Palkova</em><small>SIGNATURE</small></div></div>
+<text font-family="Manrope" font-weight="800" font-size="21" letter-spacing="4" fill="#6B1A2A"><textPath href="#cp">HARD BUTTER ICING ✦ SIGNATURE PALKOVA ✦ </textPath></text></svg>
+<div class="core"><em>Palkova</em><small>HARD BUTTER</small></div></div>
 <div class="tag" id="tag1" style="left:120px;top:250px"><i class="str"></i><div class="body">Brownies</div></div>
 <div class="tag" id="tag2" style="left:560px;top:250px"><i class="str"></i><div class="body">Cupcakes</div></div>
 {chap_html}
 <div id="caps">{''.join(cap_html)}</div>
 <div id="card"><div id="shine"></div><div class="brand">SV Sweethut</div><div class="sub">Premium homemade bakery</div>
 <div id="cta"><i>✦</i> DM to order · @svsweethut</div></div>
+<div id="fixline">Hard Butter Icing <i>✦</i> Rich <i>✦</i> Irresistible</div>
 <div id="rib"></div>
 <div id="flash"></div>
 {chr(10).join(auds)}
