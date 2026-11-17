@@ -86,6 +86,8 @@ sh(f"ffmpeg -v error -y -i {SFX}/bgm_raw.wav -i {WORK}/voice.wav -filter_complex
    f"[m][sc]sidechaincompress=threshold=0.04:ratio=4:attack=25:release=380:makeup=1[d]\" -map \"[d]\" -t {TOTAL} {PROJ}/assets/sfx/bgm_ducked.wav")
 for f in set(c[0] for c in cues):
     sh(f"cp {SFX}/{f}.wav {PROJ}/assets/sfx/{f}.wav")
+MAC_D = round(P["D"]["d"] + P["D2"]["d"], 3); SRC_A, SRC_B = 3.98, 5.60
+sh(f"ffmpeg -v error -y -ss {SRC_A} -t {SRC_B - SRC_A} -i {WORK}/clip3.mp4 -an -vf \"setpts=PTS*{MAC_D/(SRC_B-SRC_A):.4f},minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1,trim=duration={MAC_D}\" -c:v libx264 -crf 16 -pix_fmt yuv420p {PROJ}/assets/icing_macro.mp4")
 sh(f"ffmpeg -v error -y -sseof -0.08 -i {WORK}/clip5.mp4 -frames:v 1 -q:v 2 {PROJ}/assets/endframe.jpg")
 
 # ---- HTML
@@ -95,6 +97,7 @@ for name, c, a, b in PIECES:
     p = P[name]
     vids.append(f'<video id="v{name}" class="clip vid" src="assets/clip{c}.mp4" data-start="{p["s"]}" data-duration="{p["d"]}" '
                 f'data-media-start="{a}" data-volume="1.15" data-fade-in="0.03" data-fade-out="0.03" data-has-audio="true" data-track-index="0" playsinline></video>')
+vids.append(f'<video id="vMacro" class="clip vid" src="assets/icing_macro.mp4" data-start="{P["D"]["s"]}" data-duration="{MAC_D}" data-media-start="0" muted data-track-index="1" style="z-index:2" playsinline></video>')
 auds = [f'<audio id="bgm" src="assets/sfx/bgm_ducked.wav" data-start="0" data-duration="{TOTAL}" data-volume="1" data-track-index="5"></audio>']
 for i, (f, at, v) in enumerate(cues):
     dur = float(subprocess.check_output(f"ffprobe -v error -show_entries format=duration -of csv=p=0 {SFX}/{f}.wav", shell=True))
@@ -197,8 +200,9 @@ b0 = P["D"]["s"] + 0.35
 J(f'tl.fromTo("#badge",{{opacity:0,scale:0.3,rotation:-40}},{{opacity:1,scale:1,rotation:0,duration:0.6,ease:"back.out(2)"}},{b0});')
 J(f'tl.fromTo("#badgering",{{rotation:0}},{{rotation:120,duration:{round(P["D"]["d"] + P["D2"]["d"], 3)},ease:"none"}},{b0});')
 J(f'tl.to("#badge",{{opacity:0,scale:0.7,duration:0.3,ease:"power2.in"}},{round(P["E1"]["s"] - 0.3, 3)});')
-J(f'tl.fromTo("#fixline",{{opacity:0}},{{opacity:1,duration:0.15}},{out("D", 5.12)});')
-J(f'tl.set("#fixline",{{opacity:0}},{P["D2"]["s"]});')
+J(f'tl.fromTo("#vMacro",{{scale:1.5,x:40,transformOrigin:"50% 100%"}},{{scale:1.62,x:-40,duration:{MAC_D},ease:"none"}},{P["D"]["s"]});')
+J(f'tl.fromTo("#firm",{{opacity:0,scale:0.5,rotation:-12}},{{opacity:1,scale:1,rotation:-4,duration:0.45,ease:"back.out(2.5)"}},{round(P["D"]["s"] + 0.9, 3)});')
+J(f'tl.to("#firm",{{opacity:0,duration:0.25}},{round(P["E1"]["s"] - 0.3, 3)});')
 # hearts on "happiness"
 h1 = out("E2", 3.3)
 for i in range(3):
@@ -286,9 +290,9 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 .tag .body {{ position:relative; padding:18px 34px 18px 50px; background:var(--cream); border-radius:12px 22px 22px 12px; border:3px solid var(--gold);
   font-family:"Fraunces"; font-style:italic; font-weight:700; font-size:50px; color:var(--burg); box-shadow:0 14px 30px rgba(20,6,3,0.4); }}
 .tag .body:before {{ content:""; position:absolute; left:18px; top:50%; margin-top:-9px; width:18px; height:18px; border-radius:50%; background:var(--burg); }}
-#fixline {{ position:absolute; left:80px; width:740px; top:1596px; height:96px; z-index:14; opacity:0; display:flex; align-items:center; justify-content:center;
-  border-radius:48px; background:#F8F1E2; box-shadow:0 0 30px 18px #F8F1E2; font-weight:700; font-size:34px; color:#6B1A2A; letter-spacing:0.02em; }}
-#fixline i {{ font-style:normal; color:#C98F2E; font-size:24px; margin:0 10px; }}
+#firm {{ position:absolute; left:110px; top:640px; padding:0 30px; height:76px; z-index:22; opacity:0; display:flex; align-items:center; justify-content:center;
+  border-radius:40px; background:#FFF6E9; border:3px solid #E7B655; box-shadow:0 12px 30px rgba(20,6,3,0.35);
+  font-family:"Fraunces"; font-style:italic; font-weight:700; font-size:38px; color:#6B1A2A; }}
 #endbg {{ position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; opacity:0; z-index:15; }}
 #card {{ position:absolute; left:110px; width:860px; top:950px; z-index:30; opacity:0; padding:40px 40px 46px; border-radius:40px; text-align:center;
   background:linear-gradient(160deg, rgba(107,26,42,0.94), rgba(58,10,22,0.96)); border:3px solid rgba(231,182,85,0.9);
@@ -323,7 +327,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 <div id="caps">{''.join(cap_html)}</div>
 <div id="card"><div id="shine"></div><div class="brand">SV Sweethut</div><div class="sub">Premium homemade bakery</div>
 <div id="cta"><i>✦</i> DM to order · @svsweethut</div></div>
-<div id="fixline">Hard Butter Icing <i>✦</i> Rich <i>✦</i> Irresistible</div>
+<div id="firm">✦ firm hard-butter piping</div>
 <div id="rib"></div>
 <div id="flash"></div>
 {chr(10).join(auds)}
