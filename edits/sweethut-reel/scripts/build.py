@@ -61,7 +61,7 @@ for name in ["B", "C1", "D", "E1", "E3", "F1", "F2"]:
     cue("whoosh", P[name]["s"] - 0.22, 0.4)
 cue("riser", out("C2", 4.0) - 0.8, 0.22)
 cue("ding", out("C2", 4.85), 0.3)                       # "golden"
-cue("pop", out("B", 7.25), 0.32)                         # hearts on "love"
+cue("pop", out("B", 6.95), 0.32)                         # hearts on "love"
 cue("sparkle", P["D2"]["s"], 0.3)                       # "Palkova"
 cue("pop", out("E2", 3.3), 0.3)                         # "happiness"
 cue("sparkle", out("E3", 6.6), 0.3)                      # "custom cakes"
@@ -186,15 +186,15 @@ J(f'tl.fromTo("#ring",{{opacity:0,scale:0.4,rotation:-90}},{{opacity:1,scale:1,r
 J(f'tl.fromTo("#ringlbl",{{opacity:0,x:-30}},{{opacity:1,x:0,duration:0.4,ease:"power3.out"}},{r0 + 0.2});')
 J(f'tl.to(["#ring","#ringlbl"],{{opacity:0,duration:0.3}},{out("B", 6.9)});')
 # hearts on "love"
-h0 = out("B", 7.25)
+h0 = out("B", 6.95)
 for i in range(3):
     J(f'tl.fromTo("#ht{i}",{{opacity:0,scale:0,y:40}},{{opacity:1,scale:1,y:0,duration:0.45,ease:"back.out(3)"}},{h0 + i*0.1});')
-    J(f'tl.to("#ht{i}",{{opacity:0,y:-160,duration:0.5,ease:"power1.in"}},{round(h0 + 0.62 + i*0.05, 3)});')
+    J(f'tl.to("#ht{i}",{{opacity:0,y:-60,duration:0.3,ease:"power1.in"}},{round(P["C1"]["s"] - 0.33 + i*0.02, 3)});')
 # oven gauge (C2: oven shot local 4.92-6.42)
 g0 = out("C2", 4.0)
 J(f'tl.fromTo("#gauge",{{opacity:0,scale:0.6}},{{opacity:1,scale:1,duration:0.5,ease:"back.out(2)"}},{g0});')
 J(f'tl.fromTo("#needle",{{rotation:-120,transformOrigin:"50% 100%"}},{{rotation:35,duration:1.3,ease:"power2.inOut"}},{g0 + 0.2});')
-J(f'tl.to("#gauge",{{opacity:0,scale:0.8,duration:0.3,ease:"power2.in"}},{out("C2", 6.3)});')
+J(f'tl.to("#gauge",{{opacity:0,scale:0.8,duration:0.25,ease:"power2.in"}},{out("C2", 6.0)});')
 # signature badge (D)
 b0 = P["D"]["s"] + 0.35
 J(f'tl.fromTo("#badge",{{opacity:0,scale:0.3,rotation:-40}},{{opacity:1,scale:1,rotation:0,duration:0.6,ease:"back.out(2)"}},{b0});')
