@@ -39,13 +39,17 @@ Never call a generation tool twice to retry, because each call is charged. Tell 
 
 ## 3. Scene file: `reels/<name>/scene.json`
 
-Start from `examples/diet-seksa.scene.json`. Board coordinates are 1080 wide. y is the text baseline.
+Start from `reels/berat-naik/scene.json` (brand style) or `examples/diet-seksa.scene.json` (white). Board coordinates are 1080 wide. y is the text baseline.
 
 ```json
-{ "audio": "audio/voice.mp3", "words": "audio/words.json", "handle": "@theirhandle",
-  "colors": { "ink": "#24252a", "red": "#e0393e", "green": "#1f9d55", "blue": "#3b6fd8", "note": "#4a4d55" },
+{ "audio": "audio/voice.mp3", "words": "audio/words.json",
+  "handle": "@shaan_fittrainer", "handlePosition": "top",
+  "background": "#f8f3ea",
+  "colors": { "ink": "#1f2a48", "red": "#d93a3f", "green": "#1f9d55", "blue": "#3b6fd8", "note": "#55596a" },
   "elements": [ ... ] }
 ```
+
+**Shaan's brand defaults** (use unless told otherwise): cream background `#f8f3ea`, navy ink `#1f2a48`, handle `@shaan_fittrainer` at the top. The latest reel `reels/berat-naik/scene.json` is the best template to copy.
 
 | type | fields |
 |---|---|
@@ -83,6 +87,14 @@ Check for: text running off the right edge (x + width must stay under ~1040), no
 Live preview with sound: `node "$SK/engine/render.js" reels/<name> --serve`, then open http://localhost:8080.
 
 Send the MP4 with the file-sending tool. Don't commit videos (`out/` is git-ignored). Do commit `scene.json` and `audio/`. Remind them to watch it before posting.
+
+## 5. Copywriting (always, with every reel)
+
+Write `reels/<name>/caption.md` and paste the main caption in chat too, ready to copy. Include:
+- **Main caption**: a scroll-stopping first line (a feeling or question plus an emoji), a numbered list that mirrors the 5 board rows, one surprising fact, then a reframe.
+- **Comment CTA** with one keyword ("Komen \"TIMBANG\"…") plus a save/share line.
+- A short alternative caption, 2–3 cover lines, a comment to pin, 10–12 hashtags (Malay + fitness Malaysia + `#shaanfittrainer`), and 2–3 alternative hooks for A/B testing.
+- Match the voice: Malay with casual "you", short lines, no long paragraphs. Keep health claims accurate and hedge numbers with "±".
 
 ## How the engine works (for changes)
 

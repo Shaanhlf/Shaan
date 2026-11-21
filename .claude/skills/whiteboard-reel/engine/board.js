@@ -151,9 +151,9 @@
 
   // ---------- drawing ----------
   function drawBackground(ctx) {
-    ctx.fillStyle = '#fdfdfb'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = (S && S.scene.background) || '#fdfdfb'; ctx.fillRect(0, 0, W, H);
     const g = ctx.createRadialGradient(W / 2, H * 0.38, 200, W / 2, H * 0.5, H * 0.75);
-    g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(1, 'rgba(30,35,45,0.07)');
+    g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(1, 'rgba(30,35,45,0.05)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   }
 
@@ -246,8 +246,10 @@
     }
     ctx.restore();
     if (S.scene.handle) {
-      ctx.save(); ctx.font = `700 30px ${FONTS.hand}`; ctx.fillStyle = 'rgba(40,40,45,0.45)';
-      ctx.textAlign = 'center'; ctx.fillText(S.scene.handle, W / 2, H - 120); ctx.restore();
+      // handle sits at the top (default, clear of IG's caption area) or bottom
+      const top = S.scene.handlePosition !== 'bottom';
+      ctx.save(); ctx.font = `700 36px ${FONTS.hand}`; ctx.fillStyle = 'rgba(40,40,45,0.42)';
+      ctx.textAlign = 'center'; ctx.fillText(S.scene.handle, W / 2, top ? 140 : H - 120); ctx.restore();
     }
   }
 
