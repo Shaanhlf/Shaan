@@ -118,6 +118,11 @@
         for (let k = 0; k <= 40; k++) { const a = -Math.PI / 2 + (k / 40) * Math.PI * 2.1; el.pts.push([e.x + Math.cos(a) * R, e.y + Math.sin(a) * R]); }
         el.fontStr = `36px ${FONTS.marker}`; el.lw = measure(e.text, el.fontStr);
         el.dur = 0.4; el.bbox = [e.x - R, e.y - R, R * 2, R * 2];
+      } else if (e.type === 'drops') {
+        // a row of water drops filled with colours (e.g. urine colour chart); x,y = centre of the first drop
+        const R = e.r || 40, gap = e.gap || 136, n = e.colors.length;
+        el.R = R; el.gap = gap; el.dur = e.dur || 0.25 * n + 0.3;
+        el.bbox = [e.x - R - 6, e.y - R * 1.9, gap * (n - 1) + R * 2 + 12, R * 2.9 + 6];
       }
       els.push(el);
     });
@@ -200,6 +205,28 @@
       }
       case 'strike': case 'line': tip = strokePartial(ctx, el.pts, ease(p), el.type === 'strike' ? 7 : 5, el.color); break;
       case 'circle': tip = strokePartial(ctx, el.pts, ease(p), 5, el.color); break;
+      case 'drops': {
+        const n = el.colors.length, each = el.dur / (n + 0.4);
+        for (let k = 0; k < n; k++) {
+          const pk = clamp((lt - k * each) / (each * 1.4), 0, 1);
+          if (pk <= 0) break;
+          const cx = el.x + k * el.gap, cy = el.y, R = el.R * (0.6 + 0.4 * ease(pk));
+          ctx.save(); ctx.globalAlpha = clamp(pk * 2, 0, 1);
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - R * 1.85);
+          ctx.bezierCurveTo(cx + R * 0.25, cy - R * 1.25, cx + R, cy - R * 0.7, cx + R, cy);
+          ctx.arc(cx, cy, R, 0, Math.PI);
+          ctx.bezierCurveTo(cx - R, cy - R * 0.7, cx - R * 0.25, cy - R * 1.25, cx, cy - R * 1.85);
+          ctx.closePath();
+          ctx.fillStyle = el.colors[k]; ctx.fill();
+          ctx.lineWidth = 4; ctx.strokeStyle = S ? S.colors.ink : '#222'; ctx.lineJoin = 'round'; ctx.stroke();
+          ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.beginPath();
+          ctx.ellipse(cx - R * 0.38, cy - R * 0.15, R * 0.14, R * 0.28, -0.4, 0, Math.PI * 2); ctx.fill();
+          ctx.restore();
+          tip = [cx + R * 0.9, cy - R * 0.2];
+        }
+        break;
+      }
       case 'badge': {
         tip = strokePartial(ctx, el.pts, ease(p), 5, el.color);
         if (p > 0.6) {

@@ -58,6 +58,7 @@ Start from `reels/berat-naik/scene.json` (brand style) or `examples/diet-seksa.s
 | `arrow` | `x1, x2, y` |
 | `strike` / `line` / `circle` | `target` (index of a text element) + optional `part` (the words to cross out / underline / circle) |
 | `badge` | `text` (a number), `x, y` = centre |
+| `drops` | row of filled water drops, e.g. a urine colour chart: `x, y` = centre of first drop, `r` (40), `gap` (136), `colors` (array, appear one by one). Pair with hand-font labels + an arrow underneath. See `reels/air-sehari/scene.json` |
 
 Every element has `cue`: a word from the voiceover (case and punctuation ignored, prefix match) and optional `delay` in seconds. **Cues are searched in order**: each search starts at the word the previous cue matched. So list elements in the order they are spoken, or a later word will be missed and that element only shows at the very end. The same word can be used twice in a row (e.g. a title and then its underline).
 

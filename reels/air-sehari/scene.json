@@ -281,14 +281,49 @@
    "cue": "tengok"
   },
   {
+   "type": "drops",
+   "x": 200,
+   "y": 1690,
+   "r": 40,
+   "gap": 136,
+   "colors": [
+    "#9c5a14",
+    "#c98318",
+    "#e2ad2c",
+    "#efd35a",
+    "#f5e68f",
+    "#fbf5cc"
+   ],
+   "cue": "kencing",
+   "delay": 0.2
+  },
+  {
    "type": "text",
-   "text": "kuning cair = cukup!",
-   "x": 330,
-   "y": 1640,
-   "size": 40,
-   "color": "green",
+   "text": "kurang air",
+   "x": 120,
+   "y": 1790,
+   "size": 36,
+   "font": "hand",
+   "color": "red",
+   "cue": "kuning"
+  },
+  {
+   "type": "arrow",
+   "x1": 300,
+   "x2": 760,
+   "y": 1778,
    "cue": "kuning",
-   "font": "hand"
+   "delay": 0.3
+  },
+  {
+   "type": "text",
+   "text": "cukup!",
+   "x": 785,
+   "y": 1790,
+   "size": 40,
+   "font": "hand",
+   "color": "green",
+   "cue": "cair"
   },
   {
    "type": "circle",
@@ -301,7 +336,7 @@
    "type": "box",
    "text": "FOLLOW UNTUK TIPS",
    "x": 280,
-   "y": 1690,
+   "y": 1830,
    "w": 520,
    "h": 100,
    "color": "red",
