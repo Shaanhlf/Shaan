@@ -24,23 +24,23 @@
   },
   {
    "type": "text",
-   "text": "30ML X BERAT BADAN",
+   "text": "1 LITER / 25KG",
    "x": 90,
    "y": 440,
    "size": 70,
    "color": "blue",
-   "cue": "tiga"
+   "cue": "setiap"
   },
   {
    "type": "line",
    "target": 1,
    "color": "red",
-   "cue": "darab",
+   "cue": "satu",
    "delay": 0.3
   },
   {
    "type": "text",
-   "text": "contoh: 70kg = ±2 liter",
+   "text": "contoh: 75kg = 3 liter",
    "x": 95,
    "y": 530,
    "size": 38,
@@ -237,7 +237,7 @@
   },
   {
    "type": "box",
-   "text": "BADAN",
+   "text": "KULIT",
    "x": 160,
    "y": 1300,
    "w": 400,
@@ -250,26 +250,25 @@
    "x1": 575,
    "x2": 640,
    "y": 1350,
-   "cue": "kurang"
+   "cue": "nampak"
   },
   {
    "type": "text",
-   "text": "KURANG BENGKAK",
+   "text": "LEBIH SEGAR",
    "x": 655,
    "y": 1365,
-   "size": 44,
+   "size": 48,
    "color": "green",
-   "cue": "kurang",
-   "delay": 0.2
+   "cue": "segar"
   },
   {
    "type": "text",
-   "text": "tak perlu simpan air",
+   "text": "kurang kering & kusam",
    "x": 655,
    "y": 1412,
    "size": 30,
    "color": "note",
-   "cue": "simpan",
+   "cue": "kering",
    "font": "hand"
   },
   {
