@@ -1,22 +1,30 @@
-// Export the whiteboard reel to MP4 (1080x1920, 30fps) with the voiceover.
-//   node render.js                 -> out/reel.mp4
-//   node render.js --serve         -> live preview at http://localhost:8080
-//   node render.js --still 12.5    -> out/still.jpg (one frame, for checking layout)
+// Export a whiteboard reel to MP4 (1080x1920, 30fps) with the voiceover.
+// <project> is a folder holding scene.json (+ the audio / words files it points to).
+//   node render.js <project>               -> <project>/out/reel.mp4
+//   node render.js <project> --serve       -> live preview at http://localhost:8080
+//   node render.js <project> --still 12.5  -> <project>/out/still.jpg (one frame, for checking layout)
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
-const ROOT = __dirname;
+const ENGINE = __dirname;
 const FPS = 30;
 const args = process.argv.slice(2);
+const projArg = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--still');
+if (!projArg) { console.error('Usage: node render.js <project-folder> [--serve | --still <sec>]'); process.exit(1); }
+const ROOT = path.resolve(projArg);
+if (!fs.existsSync(path.join(ROOT, 'scene.json'))) { console.error('No scene.json in', ROOT); process.exit(1); }
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.mp3': 'audio/mpeg', '.woff2': 'font/woff2' };
 
 function serve(port) {
   return new Promise((resolve) => {
     const srv = http.createServer((req, res) => {
-      const p = path.join(ROOT, decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html');
-      if (!p.startsWith(ROOT) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); return res.end(); }
+      // project files first (scene.json, audio), then engine files (index.html, board.js, fonts)
+      const rel = decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html';
+      const p = [path.join(ROOT, rel), path.join(ENGINE, rel)].find((f) =>
+        (f.startsWith(ROOT + path.sep) || f.startsWith(ENGINE + path.sep)) && fs.existsSync(f) && fs.statSync(f).isFile());
+      if (!p) { res.writeHead(404); return res.end(); }
       res.writeHead(200, { 'Content-Type': TYPES[path.extname(p)] || 'application/octet-stream' });
       fs.createReadStream(p).pipe(res);
     }).listen(port, () => resolve(srv));
