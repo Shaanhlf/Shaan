@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whiteboard Reel</title>
+<style>
+  @font-face { font-family: 'Permanent Marker'; src: url('node_modules/@fontsource/permanent-marker/files/permanent-marker-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Kalam'; font-weight: 700; src: url('node_modules/@fontsource/kalam/files/kalam-latin-700-normal.woff2') format('woff2'); }
+  html, body { margin: 0; background: #e9e9e6; font-family: system-ui, sans-serif; }
+  body.render { background: #fff; }
+  #wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 16px; }
+  canvas { width: min(405px, calc(100vw - 32px)); aspect-ratio: 9 / 16; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.15); border-radius: 10px; }
+  body.render canvas { width: 1080px; height: 1920px; box-shadow: none; border-radius: 0; }
+  body.render #controls { display: none; }
+  #controls { display: flex; gap: 8px; align-items: center; width: min(405px, calc(100vw - 32px)); }
+  #seek { flex: 1; }
+  button { padding: 8px 14px; border: 0; border-radius: 8px; background: #24252a; color: #fff; font-size: 15px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="c" width="1080" height="1920"></canvas>
+  <div id="controls"><button id="play">▶ Main</button><input id="seek" type="range" min="0" max="1" step="0.01" value="0"><span id="time">0.0s</span></div>
+</div>
+<script src="board.js"></script>
+<script>
+  const ctx = document.getElementById('c').getContext('2d');
+  const isRender = new URLSearchParams(location.search).has('render');
+  if (isRender) document.body.classList.add('render');
+
+  window.init = async () => {
+    await document.fonts.load("40px 'Permanent Marker'");
+    await document.fonts.load("700 40px 'Kalam'");
+    const scene = await (await fetch('scene.json')).json();
+    const words = await (await fetch(scene.words)).json();
+    Board.setup(scene, words, ctx);
+    return { duration: Board.duration, audio: scene.audio };
+  };
+  // used by render.js: draw frame t and return it as JPEG data
+  window.frame = (t) => { Board.render(ctx, t); return ctx.canvas.toDataURL('image/jpeg', 0.93); };
+
+  if (!isRender) init().then(({ duration, audio: src }) => {
+    const audio = new Audio(src), seek = document.getElementById('seek'), btn = document.getElementById('play');
+    seek.max = duration;
+    let playing = false, start = 0;
+    const tick = () => {
+      const t = playing ? (performance.now() - start) / 1000 : +seek.value;
+      if (playing) { seek.value = t; if (t > duration) { playing = false; btn.textContent = '▶ Main'; } }
+      Board.render(ctx, t); document.getElementById('time').textContent = t.toFixed(1) + 's';
+      requestAnimationFrame(tick);
+    };
+    btn.onclick = () => {
+      playing = !playing; btn.textContent = playing ? '❚❚ Pause' : '▶ Main';
+      if (playing) { if (+seek.value >= duration) seek.value = 0; start = performance.now() - seek.value * 1000; audio.currentTime = +seek.value; audio.play(); }
+      else audio.pause();
+    };
+    seek.oninput = () => { audio.currentTime = +seek.value; if (playing) start = performance.now() - seek.value * 1000; };
+    tick();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+{
+ "title": "Diet = Seksa?",
+ "audio": "audio/voice.mp3",
+ "words": "audio/words.json",
+ "handle": "",
+ "colors": {
+  "ink": "#24252a",
+  "red": "#e0393e",
+  "green": "#1f9d55",
+  "blue": "#3b6fd8",
+  "note": "#4a4d55"
+ },
+ "elements": [
+  {
+   "type": "text",
+   "text": "DIET = SEKSA?",
+   "x": 90,
+   "y": 330,
+   "size": 92,
+   "color": "ink",
+   "cue": "ramai"
+  },
+  {
+   "type": "strike",
+   "target": 0,
+   "part": "SEKSA?",
+   "color": "red",
+   "cue": "sebenarnya"
+  },
+  {
+   "type": "text",
+   "text": "SENANG!",
+   "x": 90,
+   "y": 450,
+   "size": 92,
+   "color": "green",
+   "cue": "tak"
+  },
+  {
+   "type": "line",
+   "target": 2,
+   "color": "blue",
+   "cue": "tak",
+   "delay": 0.5
+  },
+  {
+   "type": "badge",
+   "text": "1",
+   "x": 112,
+   "y": 610,
+   "color": "red",
+   "cue": "pertama"
+  },
+  {
+   "type": "box",
+   "text": "KIRA KALORI",
+   "x": 160,
+   "y": 560,
+   "w": 400,
+   "h": 100,
+   "cue": "pertama",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 610,
+   "cue": "supaya"
+  },
+  {
+   "type": "text",
+   "text": "SEDAR",
+   "x": 655,
+   "y": 625,
+   "size": 48,
+   "color": "green",
+   "cue": "supaya",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "tahu apa you makan",
+   "x": 655,
+   "y": 672,
+   "size": 30,
+   "font": "hand",
+   "color": "note",
+   "cue": "tahu"
+  },
+  {
+   "type": "badge",
+   "text": "2",
+   "x": 112,
+   "y": 780,
+   "color": "red",
+   "cue": "kedua"
+  },
+  {
+   "type": "box",
+   "text": "PROTEIN",
+   "x": 160,
+   "y": 730,
+   "w": 400,
+   "h": 100,
+   "cue": "kedua",
+   "delay": 0.15
+  },
+  {
+   "type": "text",
+   "text": "setiap kali makan",
+   "x": 165,
+   "y": 870,
+   "size": 30,
+   "font": "hand",
+   "color": "blue",
+   "cue": "setiap"
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 780,
+   "cue": "sebab"
+  },
+  {
+   "type": "text",
+   "text": "KENYANG LAMA",
+   "x": 655,
+   "y": 795,
+   "size": 48,
+   "color": "green",
+   "cue": "kenyang"
+  },
+  {
+   "type": "badge",
+   "text": "3",
+   "x": 112,
+   "y": 960,
+   "color": "red",
+   "cue": "ketiga"
+  },
+  {
+   "type": "box",
+   "text": "JALAN 8K LANGKAH",
+   "x": 160,
+   "y": 910,
+   "w": 400,
+   "h": 100,
+   "cue": "ketiga",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 960,
+   "cue": "tak"
+  },
+  {
+   "type": "text",
+   "text": "tanpa gym pun",
+   "x": 655,
+   "y": 1022,
+   "size": 30,
+   "font": "hand",
+   "color": "note",
+   "cue": "gym"
+  },
+  {
+   "type": "text",
+   "text": "BAKAR LEMAK",
+   "x": 655,
+   "y": 975,
+   "size": 48,
+   "color": "green",
+   "cue": "lemak"
+  },
+  {
+   "type": "badge",
+   "text": "4",
+   "x": 112,
+   "y": 1130,
+   "color": "red",
+   "cue": "keempat"
+  },
+  {
+   "type": "box",
+   "text": "AIR 2 LITER",
+   "x": 160,
+   "y": 1080,
+   "w": 400,
+   "h": 100,
+   "cue": "keempat",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1130,
+   "cue": "kadang"
+  },
+  {
+   "type": "text",
+   "text": "KURANG CRAVING",
+   "x": 655,
+   "y": 1145,
+   "size": 44,
+   "color": "green",
+   "cue": "kadang",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "lapar? mungkin dahaga",
+   "x": 655,
+   "y": 1192,
+   "size": 30,
+   "font": "hand",
+   "color": "note",
+   "cue": "dahaga"
+  },
+  {
+   "type": "badge",
+   "text": "5",
+   "x": 112,
+   "y": 1300,
+   "color": "red",
+   "cue": "last"
+  },
+  {
+   "type": "box",
+   "text": "TIDUR 7 JAM",
+   "x": 160,
+   "y": 1250,
+   "w": 400,
+   "h": 100,
+   "cue": "last",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1300,
+   "cue": "kurang"
+  },
+  {
+   "type": "text",
+   "text": "HORMON STABIL",
+   "x": 655,
+   "y": 1315,
+   "size": 46,
+   "color": "green",
+   "cue": "kurang",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "kurang tidur = lapar",
+   "x": 655,
+   "y": 1362,
+   "size": 30,
+   "font": "hand",
+   "color": "red",
+   "cue": "hormon"
+  },
+  {
+   "type": "text",
+   "text": "KONSISTEN > SEMPURNA",
+   "x": 120,
+   "y": 1520,
+   "size": 66,
+   "color": "ink",
+   "cue": "ingat"
+  },
+  {
+   "type": "circle",
+   "target": 29,
+   "part": "KONSISTEN",
+   "color": "green",
+   "cue": "sempurna"
+  },
+  {
+   "type": "box",
+   "text": "SAVE & SHARE",
+   "x": 300,
+   "y": 1610,
+   "w": 480,
+   "h": 100,
+   "color": "red",
+   "cue": "save"
+  }
+ ]
+}
