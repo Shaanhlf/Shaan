@@ -1,0 +1,262 @@
+{
+ "title": "MAKAN MALAM",
+ "audio": "audio/voice.mp3",
+ "words": "audio/words.json",
+ "handle": "@shaan_fittrainer",
+ "handlePosition": "protect",
+ "background": "#f8f3ea",
+ "colors": {
+  "ink": "#1f2a48",
+  "red": "#d93a3f",
+  "green": "#1f9d55",
+  "blue": "#3b6fd8",
+  "note": "#55596a"
+ },
+ "elements": [
+  {
+   "type": "text",
+   "text": "MAKAN MALAM",
+   "x": 90,
+   "y": 330,
+   "size": 92,
+   "color": "ink",
+   "cue": "makan"
+  },
+  {
+   "type": "text",
+   "text": "BUAT GEMUK?",
+   "x": 90,
+   "y": 440,
+   "size": 92,
+   "color": "red",
+   "cue": "buat"
+  },
+  {
+   "type": "strike",
+   "target": 1,
+   "part": "BUAT GEMUK?",
+   "color": "red",
+   "cue": "tak"
+  },
+  {
+   "type": "text",
+   "text": "TAK SEMESTINYA!",
+   "x": 95,
+   "y": 530,
+   "size": 52,
+   "color": "green",
+   "cue": "tak",
+   "delay": 0.4
+  },
+  {
+   "type": "badge",
+   "text": "1",
+   "x": 112,
+   "y": 670,
+   "color": "red",
+   "cue": "pertama"
+  },
+  {
+   "type": "box",
+   "text": "KALORI CUKUP",
+   "x": 160,
+   "y": 620,
+   "w": 400,
+   "h": 100,
+   "cue": "pertama",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 670,
+   "cue": "makan"
+  },
+  {
+   "type": "text",
+   "text": "MAKAN 9 MLM OK",
+   "x": 655,
+   "y": 685,
+   "size": 44,
+   "color": "green",
+   "cue": "makan",
+   "delay": 0.2
+  },
+  {
+   "type": "badge",
+   "text": "2",
+   "x": 112,
+   "y": 840,
+   "color": "red",
+   "cue": "kedua"
+  },
+  {
+   "type": "box",
+   "text": "SNEK MALAM",
+   "x": 160,
+   "y": 790,
+   "w": 400,
+   "h": 100,
+   "cue": "kedua",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 840,
+   "cue": "masalah"
+  },
+  {
+   "type": "text",
+   "text": "PUNCA SEBENAR",
+   "x": 655,
+   "y": 855,
+   "size": 44,
+   "color": "red",
+   "cue": "masalah",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "kerepek, maggi, air manis",
+   "x": 655,
+   "y": 902,
+   "size": 30,
+   "color": "note",
+   "cue": "kerepek",
+   "font": "hand"
+  },
+  {
+   "type": "badge",
+   "text": "3",
+   "x": 112,
+   "y": 1010,
+   "color": "red",
+   "cue": "ketiga"
+  },
+  {
+   "type": "box",
+   "text": "DINNER BERAT",
+   "x": 160,
+   "y": 960,
+   "w": 400,
+   "h": 100,
+   "cue": "ketiga",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1010,
+   "cue": "boleh"
+  },
+  {
+   "type": "text",
+   "text": "GANGGU TIDUR",
+   "x": 655,
+   "y": 1025,
+   "size": 48,
+   "color": "red",
+   "cue": "ganggu"
+  },
+  {
+   "type": "badge",
+   "text": "4",
+   "x": 112,
+   "y": 1180,
+   "color": "red",
+   "cue": "keempat"
+  },
+  {
+   "type": "box",
+   "text": "TIDUR TERUK",
+   "x": 160,
+   "y": 1130,
+   "w": 400,
+   "h": 100,
+   "cue": "keempat",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1180,
+   "cue": "esok"
+  },
+  {
+   "type": "text",
+   "text": "ESOK LAPAR",
+   "x": 655,
+   "y": 1195,
+   "size": 48,
+   "color": "red",
+   "cue": "esok",
+   "delay": 0.2
+  },
+  {
+   "type": "badge",
+   "text": "5",
+   "x": 112,
+   "y": 1350,
+   "color": "red",
+   "cue": "last"
+  },
+  {
+   "type": "box",
+   "text": "PROTEIN + SAYUR",
+   "x": 160,
+   "y": 1300,
+   "w": 400,
+   "h": 100,
+   "cue": "last",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1350,
+   "cue": "untuk"
+  },
+  {
+   "type": "text",
+   "text": "DINNER TERBAIK",
+   "x": 655,
+   "y": 1365,
+   "size": 44,
+   "color": "green",
+   "cue": "untuk",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "KALORI > JAM MAKAN",
+   "x": 100,
+   "y": 1580,
+   "size": 66,
+   "color": "ink",
+   "cue": "ingat"
+  },
+  {
+   "type": "circle",
+   "target": 25,
+   "part": "KALORI",
+   "color": "green",
+   "cue": "penting"
+  },
+  {
+   "type": "box",
+   "text": "FOLLOW UNTUK TIPS",
+   "x": 280,
+   "y": 1630,
+   "w": 520,
+   "h": 100,
+   "color": "green",
+   "cue": "follow"
+  }
+ ]
+}

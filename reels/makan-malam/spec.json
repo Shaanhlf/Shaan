@@ -1,0 +1,84 @@
+{
+ "title": [
+  {
+   "text": "MAKAN MALAM",
+   "cue": "makan"
+  },
+  {
+   "text": "BUAT GEMUK?",
+   "cue": "buat",
+   "size": 92
+  }
+ ],
+ "strike": {
+  "line": 1,
+  "part": "BUAT GEMUK?",
+  "cue": "tak"
+ },
+ "sub": {
+  "text": "TAK SEMESTINYA!",
+  "cue": "tak",
+  "delay": 0.4,
+  "font": "marker",
+  "color": "green",
+  "size": 52
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "KALORI CUKUP",
+   "arrow": "makan",
+   "result": "MAKAN 9 MLM OK",
+   "rcue": "makan"
+  },
+  {
+   "cue": "kedua",
+   "box": "SNEK MALAM",
+   "arrow": "masalah",
+   "result": "PUNCA SEBENAR",
+   "rcue": "masalah",
+   "rcolor": "red",
+   "note": [
+    "kerepek, maggi, air manis",
+    "kerepek"
+   ]
+  },
+  {
+   "cue": "ketiga",
+   "box": "DINNER BERAT",
+   "arrow": "boleh",
+   "result": "GANGGU TIDUR",
+   "rcue": "ganggu",
+   "rcolor": "red"
+  },
+  {
+   "cue": "keempat",
+   "box": "TIDUR TERUK",
+   "arrow": "esok",
+   "result": "ESOK LAPAR",
+   "rcue": "esok",
+   "rcolor": "red"
+  },
+  {
+   "cue": "last",
+   "box": "PROTEIN + SAYUR",
+   "arrow": "untuk",
+   "result": "DINNER TERBAIK",
+   "rcue": "untuk"
+  }
+ ],
+ "punch": {
+  "text": "KALORI > JAM MAKAN",
+  "cue": "ingat",
+  "size": 66
+ },
+ "circle": {
+  "part": "KALORI",
+  "cue": "penting",
+  "color": "green"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}

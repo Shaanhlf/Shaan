@@ -39,6 +39,9 @@ Never call a generation tool twice to retry, because each call is charged. Tell 
 
 ## 3. Scene file: `reels/<name>/scene.json`
 
+**Fastest way:** write a short `reels/<name>/spec.json` (title lines, 5 rows, punchline, CTA) and run
+`python3 "$SK/build_scene.py" reels/<name>`. It applies the brand defaults and the layout below. The spec format is documented at the top of `build_scene.py`, and `reels/protein-sehari/spec.json` is a full example. Hand-edit `scene.json` only for extras (e.g. `drops`).
+
 Start from `reels/berat-naik/scene.json` (brand style) or `examples/diet-seksa.scene.json` (white). Board coordinates are 1080 wide. y is the text baseline.
 
 ```json

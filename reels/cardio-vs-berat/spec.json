@@ -1,0 +1,85 @@
+{
+ "title": [
+  {
+   "text": "CARDIO VS BERAT?",
+   "cue": "cardio"
+  },
+  {
+   "text": "DUA-DUA, KERJA LAIN!",
+   "cue": "jawapan"
+  }
+ ],
+ "underline": {
+  "line": 1,
+  "cue": "kerja"
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "CARDIO",
+   "arrow": "bakar",
+   "result": "BAKAR KALORI",
+   "rcue": "bakar",
+   "note": [
+    "masa you buat",
+    "masa"
+   ]
+  },
+  {
+   "cue": "kedua",
+   "box": "ANGKAT BERAT",
+   "arrow": "bina",
+   "result": "BINA OTOT",
+   "rcue": "bina",
+   "note": [
+    "bakar kalori masa rehat",
+    "rehat"
+   ]
+  },
+  {
+   "cue": "ketiga",
+   "box": "CARDIO JE",
+   "arrow": "tapi",
+   "result": "OTOT HILANG",
+   "rcue": "hilang",
+   "rcolor": "red",
+   "note": [
+    "berat turun, badan lembik",
+    "hilang"
+   ]
+  },
+  {
+   "cue": "keempat",
+   "box": "BERAT JE",
+   "arrow": "tapi",
+   "result": "STAMINA KURANG",
+   "rcue": "stamina",
+   "rcolor": "red"
+  },
+  {
+   "cue": "last",
+   "box": "GABUNG DUA-DUA",
+   "arrow": "lemak",
+   "result": "TRANSFORMASI",
+   "rcue": "lemak",
+   "note": [
+    "jantung pun sihat",
+    "jantung"
+   ]
+  }
+ ],
+ "punch": {
+  "text": "BERAT DULU, CARDIO KEMUDIAN",
+  "cue": "ingat",
+  "size": 54
+ },
+ "circle": {
+  "part": "BERAT DULU",
+  "cue": "dulu",
+  "color": "green"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}

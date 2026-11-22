@@ -1,0 +1,94 @@
+{
+ "title": [
+  {
+   "text": "CHEAT MEAL",
+   "cue": "cheat"
+  },
+  {
+   "text": "ROSAK DIET?",
+   "cue": "rosak",
+   "size": 92
+  }
+ ],
+ "strike": {
+  "line": 1,
+  "part": "ROSAK DIET?",
+  "cue": "tak"
+ },
+ "sub": {
+  "text": "TAK, KALAU BETUL!",
+  "cue": "tak",
+  "delay": 0.4,
+  "font": "marker",
+  "color": "green",
+  "size": 52
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "1 HIDANGAN",
+   "arrow": "seminggu",
+   "result": "OKAY JE",
+   "rcue": "okay",
+   "note": [
+    "seminggu sekali",
+    "okay"
+   ]
+  },
+  {
+   "cue": "kedua",
+   "box": "CHEAT DAY",
+   "under": [
+    "makan tanpa had",
+    "tanpa"
+   ],
+   "arrow": "boleh",
+   "result": "PADAM DEFISIT",
+   "rcue": "padam",
+   "rcolor": "red"
+  },
+  {
+   "cue": "ketiga",
+   "box": "BERAT NAIK ESOK",
+   "arrow": "kebanyakan",
+   "result": "KEBANYAKAN AIR",
+   "rcue": "kebanyakan",
+   "note": [
+    "bukan lemak",
+    "bukan"
+   ]
+  },
+  {
+   "cue": "keempat",
+   "box": "JANGAN DENDA DIRI",
+   "arrow": "teruskan",
+   "result": "PLAN BIASA",
+   "rcue": "teruskan",
+   "note": [
+    "jangan skip makan",
+    "teruskan"
+   ]
+  },
+  {
+   "cue": "last",
+   "box": "RANCANG",
+   "arrow": "jangan",
+   "result": "BUKAN EMOSI",
+   "rcue": "emosi"
+  }
+ ],
+ "punch": {
+  "text": "1 MEAL OK, 1 MINGGU TAK",
+  "cue": "ingat",
+  "size": 60
+ },
+ "circle": {
+  "part": "1 MINGGU",
+  "cue": "minggu",
+  "color": "red"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}

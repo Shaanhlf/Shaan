@@ -1,0 +1,78 @@
+{
+ "title": [
+  {
+   "text": "PROTEIN SEHARI?",
+   "cue": "protein"
+  },
+  {
+   "text": "1.6G X BERAT BADAN",
+   "cue": "satu",
+   "color": "blue",
+   "size": 66
+  }
+ ],
+ "underline": {
+  "line": 1,
+  "cue": "darab",
+  "color": "red"
+ },
+ "sub": {
+  "text": "contoh: 70kg = ±110g",
+  "cue": "contoh"
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "2 BIJI TELUR",
+   "arrow": "dua",
+   "result": "12G PROTEIN",
+   "rcue": "belas"
+  },
+  {
+   "cue": "kedua",
+   "box": "DADA AYAM 100G",
+   "arrow": "seratus",
+   "result": "31G PROTEIN",
+   "rcue": "tiga"
+  },
+  {
+   "cue": "ketiga",
+   "box": "IKAN KEMBUNG",
+   "arrow": "seketul",
+   "result": "±20G PROTEIN",
+   "rcue": "lebih"
+  },
+  {
+   "cue": "keempat",
+   "box": "TAUHU & TEMPE",
+   "arrow": "sesuai",
+   "result": "MESRA BAJET",
+   "rcue": "bajet"
+  },
+  {
+   "cue": "last",
+   "box": "SUSU / WHEY",
+   "arrow": "kalau",
+   "result": "TOP-UP MUDAH",
+   "rcue": "susah",
+   "note": [
+    "kalau susah nak cukup",
+    "susah"
+   ]
+  }
+ ],
+ "punch": {
+  "text": "BAHAGI SETIAP WAKTU MAKAN",
+  "cue": "ingat",
+  "size": 54
+ },
+ "circle": {
+  "part": "BAHAGI",
+  "cue": "setiap",
+  "color": "red"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}
