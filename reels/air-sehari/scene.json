@@ -3,7 +3,7 @@
  "audio": "audio/voice.mp3",
  "words": "audio/words.json",
  "handle": "@shaan_fittrainer",
- "handlePosition": "top",
+ "handlePosition": "protect",
  "background": "#f8f3ea",
  "colors": {
   "ink": "#1f2a48",

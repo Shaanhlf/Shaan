@@ -43,13 +43,13 @@ Start from `reels/berat-naik/scene.json` (brand style) or `examples/diet-seksa.s
 
 ```json
 { "audio": "audio/voice.mp3", "words": "audio/words.json",
-  "handle": "@shaan_fittrainer", "handlePosition": "top",
+  "handle": "@shaan_fittrainer", "handlePosition": "protect",
   "background": "#f8f3ea",
   "colors": { "ink": "#1f2a48", "red": "#d93a3f", "green": "#1f9d55", "blue": "#3b6fd8", "note": "#55596a" },
   "elements": [ ... ] }
 ```
 
-**Shaan's brand defaults** (use unless told otherwise): cream background `#f8f3ea`, navy ink `#1f2a48`, handle `@shaan_fittrainer` at the top. The latest reel `reels/berat-naik/scene.json` is the best template to copy.
+**Shaan's brand defaults** (use unless told otherwise): cream background `#f8f3ea`, navy ink `#1f2a48`, handle `@shaan_fittrainer` as an anti-crop watermark (`handlePosition: "protect"`: lower-middle, over the content, ~22% opacity, drifting slowly so it can't be cropped or blurred in one spot). Shaan asked for this to protect their content: never move it back to the top or edges unless they ask. Other values: `top`, `bottom`. The latest reel `reels/berat-naik/scene.json` is the best template to copy.
 
 | type | fields |
 |---|---|

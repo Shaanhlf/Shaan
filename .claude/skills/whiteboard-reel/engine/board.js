@@ -273,10 +273,19 @@
     }
     ctx.restore();
     if (S.scene.handle) {
-      // handle sits at the top (default, clear of IG's caption area) or bottom
-      const top = S.scene.handlePosition !== 'bottom';
-      ctx.save(); ctx.font = `700 36px ${FONTS.hand}`; ctx.fillStyle = 'rgba(40,40,45,0.42)';
-      ctx.textAlign = 'center'; ctx.fillText(S.scene.handle, W / 2, top ? 140 : H - 120); ctx.restore();
+      const pos = S.scene.handlePosition || 'protect';
+      ctx.save(); ctx.textAlign = 'center';
+      if (pos === 'protect') {
+        // anti-crop watermark: sits over the lower-middle of the board (cropping it out
+        // cuts the content) and drifts slowly side to side so it can't be blurred in one spot
+        const x = W / 2 + Math.sin(t * 0.35) * 150, y = H * 0.66 + Math.sin(t * 0.23 + 1) * 40;
+        ctx.font = `700 46px ${FONTS.hand}`;
+        ctx.fillStyle = 'rgba(31,42,72,0.22)'; ctx.fillText(S.scene.handle, x, y);
+      } else {
+        ctx.font = `700 36px ${FONTS.hand}`; ctx.fillStyle = 'rgba(40,40,45,0.42)';
+        ctx.fillText(S.scene.handle, W / 2, pos === 'bottom' ? H - 120 : 140);
+      }
+      ctx.restore();
     }
   }
 

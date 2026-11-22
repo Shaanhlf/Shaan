@@ -284,5 +284,6 @@
    "color": "green",
    "cue": "follow"
   }
- ]
+ ],
+ "handlePosition": "protect"
 }
