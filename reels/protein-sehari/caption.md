@@ -5,8 +5,8 @@
 You makan cukup protein ke… atau rasa je cukup? 🤔🍗
 
 Formula senang:
-👉 1.6g × berat badan (kg)
-Contoh: 70kg = ±110g protein sehari
+👉 1.2g × berat badan (kg)
+Contoh: 70kg = ±85g protein sehari
 
 Cara capai dengan makanan Malaysia 🇲🇾
 1️⃣ 2 biji telur → ±12g
@@ -24,8 +24,8 @@ Kenapa penting? Protein buat you kenyang lebih lama, jaga otot masa diet, dan ba
 
 ## Caption pendek (alternatif)
 
-Protein sehari = 1.6g × berat badan 🍗
-70kg = ±110g.
+Protein sehari = 1.2g × berat badan 🍗
+70kg = ±85g.
 Telur, ayam, ikan, tauhu, tempe: semua ada kat kedai mamak 😉
 Save 📌
 
@@ -37,7 +37,7 @@ Save 📌
 
 ## Komen untuk di-pin
 
-Contoh 110g sehari: 3 telur (18g) + nasi ayam (30g) + ikan kembung (20g) + tempe goreng (15g) + segelas susu (8g) + 1 scoop whey (24g) ✅
+Contoh ±85g sehari: 2 telur (12g) + nasi ayam (30g) + ikan kembung (20g) + tempe goreng (15g) + segelas susu (8g) ✅
 
 ## Hashtag
 
@@ -49,4 +49,4 @@ Contoh 110g sehari: 3 telur (18g) + nasi ayam (30g) + ikan kembung (20g) + tempe
 - "Berapa gram protein you perlu? Kira dalam 5 saat."
 - "Nak badan tegap? Mula dengan nombor ni."
 
-> Nota: 1.6g/kg ialah panduan umum untuk orang aktif. Orang yang ada masalah buah pinggang perlu dapatkan nasihat doktor.
+> Nota: 1.2g/kg ialah panduan umum untuk orang dewasa yang aktif. Orang yang ada masalah buah pinggang perlu dapatkan nasihat doktor.

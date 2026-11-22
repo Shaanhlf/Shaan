@@ -5,7 +5,7 @@
    "cue": "protein"
   },
   {
-   "text": "1.6G X BERAT BADAN",
+   "text": "1.2G X BERAT BADAN",
    "cue": "satu",
    "color": "blue",
    "size": 66
@@ -17,7 +17,7 @@
   "color": "red"
  },
  "sub": {
-  "text": "contoh: 70kg = ±110g",
+  "text": "contoh: 70kg = ±85g",
   "cue": "contoh"
  },
  "rows": [
