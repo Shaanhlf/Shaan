@@ -10,6 +10,8 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
+from panel_edits import edit  # removes time badges, renames to shaan_fittrainer
+
 SRC, OUT = sys.argv[1], sys.argv[2]
 W, H, FPS = 1080, 1920, 30
 SCENE = 5.0
@@ -61,9 +63,10 @@ band_h = PH / BANDS
 band_idx = np.minimum((yy / band_h).astype(int), BANDS - 1)
 jitter = rng.normal(0, 18, (PH, 1)).astype(float)  # ragged stroke edge
 
-for p in panels:
-    color = np.asarray(p.resize((W, PH), Image.LANCZOS), float)
-    sk = sketch(p.resize((W, PH), Image.LANCZOS))
+for i, p in enumerate(panels):
+    big = edit(p.resize((W, PH), Image.LANCZOS), i)
+    color = np.asarray(big, float)
+    sk = sketch(big)
     sk = 0.85 * sk + 0.15 * color  # hint of colour in the sketch
     for f in range(int(SCENE * FPS)):
         t = f / FPS
