@@ -53,11 +53,15 @@
   },
   {
    "cue": "keempat",
-   "box": "TIDUR TERUK",
-   "arrow": "esok",
-   "result": "ESOK LAPAR",
-   "rcue": "esok",
-   "rcolor": "red"
+   "box": "MAKAN DEPAN TV",
+   "arrow": "terlebih",
+   "result": "TERLEBIH MAKAN",
+   "rcue": "terlebih",
+   "rcolor": "red",
+   "note": [
+    "otak tak perasan kenyang",
+    "otak"
+   ]
   },
   {
    "cue": "last",

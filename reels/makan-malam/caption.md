@@ -8,7 +8,7 @@ Tak semestinya. Yang buat gemuk bukan JAM, tapi jumlah kalori sehari.
 1️⃣ Kalori sehari cukup → makan pukul 9 malam pun okay
 2️⃣ Masalah sebenar → snek malam tanpa sedar (kerepek, maggi, air manis 👀)
 3️⃣ Dinner terlalu berat → boleh ganggu tidur
-4️⃣ Tidur teruk → esok you lagi lapar
+4️⃣ Makan depan TV / phone → terlebih makan, sebab otak tak perasan dah kenyang 📱
 5️⃣ Pilihan terbaik → protein + sayur untuk makan malam 🥗
 
 Ingat: KALORI > JAM MAKAN.

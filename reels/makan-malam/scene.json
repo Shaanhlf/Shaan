@@ -172,7 +172,7 @@
   },
   {
    "type": "box",
-   "text": "TIDUR TERUK",
+   "text": "MAKAN DEPAN TV",
    "x": 160,
    "y": 1130,
    "w": 400,
@@ -185,17 +185,27 @@
    "x1": 575,
    "x2": 640,
    "y": 1180,
-   "cue": "esok"
+   "cue": "terlebih"
   },
   {
    "type": "text",
-   "text": "ESOK LAPAR",
+   "text": "TERLEBIH MAKAN",
    "x": 655,
    "y": 1195,
-   "size": 48,
+   "size": 44,
    "color": "red",
-   "cue": "esok",
+   "cue": "terlebih",
    "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "otak tak perasan kenyang",
+   "x": 655,
+   "y": 1242,
+   "size": 30,
+   "color": "note",
+   "cue": "otak",
+   "font": "hand"
   },
   {
    "type": "badge",
@@ -243,7 +253,7 @@
   },
   {
    "type": "circle",
-   "target": 25,
+   "target": 26,
    "part": "KALORI",
    "color": "green",
    "cue": "penting"
