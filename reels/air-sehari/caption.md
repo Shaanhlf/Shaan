@@ -19,7 +19,9 @@ Bila minum cukup, ini yang jadi:
 Fakta: kurang air sikit pun dah boleh buat prestasi workout jatuh.
 
 Cara check paling mudah? Tengok warna kencing 🚽
-Kuning cair = cukup ✅ Kuning pekat = minum lagi!
+Banding dengan carta dalam video 👆
+🟤 Coklat / kuning pekat = kurang air, minum sekarang!
+🟡 Kuning cair = cukup ✅
 
 💬 Komen "AIR" + berat badan you, saya kira berapa liter you perlu
 📌 Save & share dengan kawan yang minum air sebulan sekali 😂
