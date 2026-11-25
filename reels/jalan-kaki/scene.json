@@ -1,0 +1,269 @@
+{
+ "title": "TAK SUKA GYM?",
+ "audio": "audio/voice.mp3",
+ "words": "audio/words.json",
+ "handle": "@shaan_fittrainer",
+ "handlePosition": "protect",
+ "background": "#f8f3ea",
+ "colors": {
+  "ink": "#1f2a48",
+  "red": "#d93a3f",
+  "green": "#1f9d55",
+  "blue": "#3b6fd8",
+  "note": "#55596a"
+ },
+ "elements": [
+  {
+   "type": "text",
+   "text": "TAK SUKA GYM?",
+   "x": 90,
+   "y": 330,
+   "size": 92,
+   "color": "ink",
+   "cue": "tak"
+  },
+  {
+   "type": "text",
+   "text": "JALAN KAKI JE!",
+   "x": 90,
+   "y": 440,
+   "size": 92,
+   "color": "green",
+   "cue": "jalan"
+  },
+  {
+   "type": "line",
+   "target": 1,
+   "color": "blue",
+   "cue": "bakar",
+   "delay": 0.3
+  },
+  {
+   "type": "badge",
+   "text": "1",
+   "x": 112,
+   "y": 610,
+   "color": "red",
+   "cue": "pertama"
+  },
+  {
+   "type": "box",
+   "text": "8,000 LANGKAH",
+   "x": 160,
+   "y": 560,
+   "w": 400,
+   "h": 100,
+   "cue": "pertama",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 610,
+   "cue": "lebih"
+  },
+  {
+   "type": "text",
+   "text": "±300 KALORI",
+   "x": 655,
+   "y": 625,
+   "size": 48,
+   "color": "green",
+   "cue": "tiga"
+  },
+  {
+   "type": "text",
+   "text": "ikut berat badan",
+   "x": 655,
+   "y": 672,
+   "size": 30,
+   "color": "note",
+   "cue": "bergantung",
+   "font": "hand"
+  },
+  {
+   "type": "badge",
+   "text": "2",
+   "x": 112,
+   "y": 780,
+   "color": "red",
+   "cue": "kedua"
+  },
+  {
+   "type": "box",
+   "text": "LEPAS MAKAN",
+   "x": 160,
+   "y": 730,
+   "w": 400,
+   "h": 100,
+   "cue": "kedua",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 780,
+   "cue": "bantu"
+  },
+  {
+   "type": "text",
+   "text": "KAWAL GULA",
+   "x": 655,
+   "y": 795,
+   "size": 48,
+   "color": "green",
+   "cue": "kawal"
+  },
+  {
+   "type": "text",
+   "text": "gula dalam darah",
+   "x": 655,
+   "y": 842,
+   "size": 30,
+   "color": "note",
+   "cue": "darah",
+   "font": "hand"
+  },
+  {
+   "type": "badge",
+   "text": "3",
+   "x": 112,
+   "y": 950,
+   "color": "red",
+   "cue": "ketiga"
+  },
+  {
+   "type": "box",
+   "text": "TAK PENAT",
+   "x": 160,
+   "y": 900,
+   "w": 400,
+   "h": 100,
+   "cue": "ketiga",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 950,
+   "cue": "jadi"
+  },
+  {
+   "type": "text",
+   "text": "BOLEH HARI-HARI",
+   "x": 655,
+   "y": 965,
+   "size": 40,
+   "color": "green",
+   "cue": "senang"
+  },
+  {
+   "type": "badge",
+   "text": "4",
+   "x": 112,
+   "y": 1120,
+   "color": "red",
+   "cue": "keempat"
+  },
+  {
+   "type": "box",
+   "text": "KURANG STRESS",
+   "x": 160,
+   "y": 1070,
+   "w": 400,
+   "h": 100,
+   "cue": "keempat",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1120,
+   "cue": "boleh"
+  },
+  {
+   "type": "text",
+   "text": "TIDUR LENA",
+   "x": 655,
+   "y": 1135,
+   "size": 48,
+   "color": "green",
+   "cue": "lena"
+  },
+  {
+   "type": "badge",
+   "text": "5",
+   "x": 112,
+   "y": 1290,
+   "color": "red",
+   "cue": "last"
+  },
+  {
+   "type": "box",
+   "text": "MULA 5,000",
+   "x": 160,
+   "y": 1240,
+   "w": 400,
+   "h": 100,
+   "cue": "last",
+   "delay": 0.15
+  },
+  {
+   "type": "arrow",
+   "x1": 575,
+   "x2": 640,
+   "y": 1290,
+   "cue": "tambah"
+  },
+  {
+   "type": "text",
+   "text": "TAMBAH SIKIT",
+   "x": 655,
+   "y": 1305,
+   "size": 48,
+   "color": "green",
+   "cue": "tambah",
+   "delay": 0.2
+  },
+  {
+   "type": "text",
+   "text": "setiap minggu",
+   "x": 655,
+   "y": 1352,
+   "size": 30,
+   "color": "note",
+   "cue": "minggu",
+   "font": "hand"
+  },
+  {
+   "type": "text",
+   "text": "KONSISTEN > LAJU",
+   "x": 100,
+   "y": 1520,
+   "size": 66,
+   "color": "ink",
+   "cue": "ingat"
+  },
+  {
+   "type": "circle",
+   "target": 26,
+   "part": "KONSISTEN",
+   "color": "green",
+   "cue": "konsisten"
+  },
+  {
+   "type": "box",
+   "text": "FOLLOW UNTUK TIPS",
+   "x": 280,
+   "y": 1570,
+   "w": 520,
+   "h": 100,
+   "color": "green",
+   "cue": "follow"
+  }
+ ]
+}

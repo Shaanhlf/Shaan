@@ -1,0 +1,81 @@
+{
+ "title": [
+  {
+   "text": "TAK SUKA GYM?",
+   "cue": "tak"
+  },
+  {
+   "text": "JALAN KAKI JE!",
+   "cue": "jalan",
+   "color": "green",
+   "size": 92
+  }
+ ],
+ "underline": {
+  "line": 1,
+  "cue": "bakar"
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "8,000 LANGKAH",
+   "arrow": "lebih",
+   "result": "±300 KALORI",
+   "rcue": "tiga",
+   "note": [
+    "ikut berat badan",
+    "bergantung"
+   ]
+  },
+  {
+   "cue": "kedua",
+   "box": "LEPAS MAKAN",
+   "arrow": "bantu",
+   "result": "KAWAL GULA",
+   "rcue": "kawal",
+   "note": [
+    "gula dalam darah",
+    "darah"
+   ]
+  },
+  {
+   "cue": "ketiga",
+   "box": "TAK PENAT",
+   "arrow": "jadi",
+   "result": "BOLEH HARI-HARI",
+   "rcue": "senang"
+  },
+  {
+   "cue": "keempat",
+   "box": "KURANG STRESS",
+   "arrow": "boleh",
+   "result": "TIDUR LENA",
+   "rcue": "lena"
+  },
+  {
+   "cue": "last",
+   "box": "MULA 5,000",
+   "arrow": "tambah",
+   "result": "TAMBAH SIKIT",
+   "rcue": "tambah",
+   "note": [
+    "setiap minggu",
+    "minggu"
+   ]
+  }
+ ],
+ "punch": {
+  "text": "KONSISTEN > LAJU",
+  "cue": "ingat",
+  "size": 66
+ },
+ "circle": {
+  "part": "KONSISTEN",
+  "cue": "konsisten",
+  "color": "green"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}

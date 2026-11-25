@@ -1,0 +1,85 @@
+{
+ "title": [
+  {
+   "text": "BERAT TAK TURUN?",
+   "cue": "berat"
+  },
+  {
+   "text": "5 SEBAB BIASA",
+   "cue": "lima"
+  }
+ ],
+ "underline": {
+  "line": 1,
+  "cue": "sebab"
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "MINYAK & SOS",
+   "arrow": "kalori",
+   "result": "TAK DIKIRA",
+   "rcue": "kira",
+   "rcolor": "red"
+  },
+  {
+   "cue": "kedua",
+   "box": "HUJUNG MINGGU",
+   "under": [
+    "Isnin-Jumaat je diet",
+    "isnin"
+   ],
+   "arrow": "tapi",
+   "result": "LARI PLAN",
+   "rcue": "lari",
+   "rcolor": "red"
+  },
+  {
+   "cue": "ketiga",
+   "box": "SIMPAN AIR",
+   "arrow": "terutamanya",
+   "result": "BUKAN LEMAK",
+   "rcue": "terutamanya",
+   "note": [
+    "stress / makan masin",
+    "stress"
+   ]
+  },
+  {
+   "cue": "keempat",
+   "box": "MAKIN KURUS",
+   "under": [
+    "bakar kurang kalori",
+    "kurang"
+   ],
+   "arrow": "jadi",
+   "result": "PLAN ADJUST",
+   "rcue": "adjust"
+  },
+  {
+   "cue": "last",
+   "box": "BARU 2 MINGGU",
+   "arrow": "fat",
+   "result": "PERLU MASA",
+   "rcue": "masa"
+  }
+ ],
+ "punch": {
+  "text": "UKUR PINGGANG + GAMBAR",
+  "cue": "ingat",
+  "size": 60
+ },
+ "circle": {
+  "part": "PINGGANG",
+  "cue": "pinggang",
+  "color": "green"
+ },
+ "punchNote": {
+  "text": "bukan timbang je",
+  "cue": "timbang"
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}

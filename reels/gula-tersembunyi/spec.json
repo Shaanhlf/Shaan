@@ -1,0 +1,82 @@
+{
+ "title": [
+  {
+   "text": "GULA TERSEMBUNYI",
+   "cue": "gula",
+   "size": 86
+  },
+  {
+   "text": "SETIAP HARI",
+   "cue": "setiap"
+  }
+ ],
+ "underline": {
+  "line": 1,
+  "cue": "hari"
+ },
+ "rows": [
+  {
+   "cue": "pertama",
+   "box": "TEH TARIK",
+   "arrow": "lebih",
+   "result": "±3-4 SUDU TEH",
+   "rcue": "tiga",
+   "rcolor": "red"
+  },
+  {
+   "cue": "kedua",
+   "box": "AIR KOTAK",
+   "arrow": "sampai",
+   "result": "±5 SUDU TEH",
+   "rcue": "lima",
+   "rcolor": "red"
+  },
+  {
+   "cue": "ketiga",
+   "box": "JUS BUAH KOTAK",
+   "under": [
+    "nampak sihat je",
+    "sihat"
+   ],
+   "arrow": "gula",
+   "result": "GULA TINGGI",
+   "rcue": "gula",
+   "rcolor": "red"
+  },
+  {
+   "cue": "keempat",
+   "box": "SOS & KICAP MANIS",
+   "arrow": "sikit",
+   "result": "MAKIN BERTAMBAH",
+   "rcue": "bertambah",
+   "rcolor": "red"
+  },
+  {
+   "cue": "last",
+   "box": "AIR TIN",
+   "arrow": "satu",
+   "result": "±7+ SUDU TEH",
+   "rcue": "tujuh",
+   "rcolor": "red"
+  }
+ ],
+ "punch": {
+  "text": "KURANG 6 SUDU TEH SEHARI",
+  "cue": "ingat",
+  "size": 56
+ },
+ "circle": {
+  "part": "6 SUDU TEH",
+  "cue": "enam",
+  "color": "green"
+ },
+ "punchNote": {
+  "text": "cadangan WHO (gula tambahan)",
+  "cue": "tambahan",
+  "x": 220
+ },
+ "cta": {
+  "text": "FOLLOW UNTUK TIPS",
+  "cue": "follow"
+ }
+}
